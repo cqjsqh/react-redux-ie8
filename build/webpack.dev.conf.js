@@ -16,12 +16,6 @@ module.exports = merge(baseWebpackConfig, {
         filename: '[name].js'
     },
 
-    externals: {
-        'react': 'window.react',
-        'react-dom': 'window.reactDom',
-        'react-redux': 'window.reactRedux'
-    },
-
     plugins: [
         /* HotModule 插件在页面进行变更的时候只会重回对应的页面模块，不会重绘整个 html 文件 */
         new webpack.HotModuleReplacementPlugin(),

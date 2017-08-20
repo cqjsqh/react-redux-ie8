@@ -1,18 +1,22 @@
 {
-  "name": "redux-react-supportIE8-template",
+  "name": "react-redux-ie8",
   "version": "1.0.0",
-  "description": "react-redux work in IE8",
-  "main": "./src/index.js",
+  "description": "redux + react + webpack-hot-middleware + support IE8",
+  "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhoulijie/react-redux-support-ie8.git"
+    "url": "git+https://github.com/cqjsqh/react-redux-ie8.git"
   },
-  "author": "iVan <jiestyle21@gmail.com>",
-  "license": "MIT",
+  "author": "cqjsqh <358140850@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cqjsqh/react-redux-ie8/issues"
+  },
+  "homepage": "https://github.com/cqjsqh/react-redux-ie8#readme",
   "dependencies": {
     "eventsource-polyfill": "^0.9.6",
     "fetch-ie8": "^1.4.0",
@@ -36,8 +40,12 @@
     "es3ify-loader": "^0.1.0",
     "express": "^4.13.3",
     "html-webpack-plugin": "^2.30.1",
+    "http-proxy-middleware": "^0.17.4",
+    "ip": "^1.1.5",
+    "opn": "^5.1.0",
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack-hot-middleware": "^2.6.0",
+    "webpack-merge": "^4.1.0"
   }
 }
