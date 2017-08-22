@@ -15,9 +15,10 @@ module.exports = {
 
     resolve: {
         // 自动补全的扩展名
-        extensions: ['', '.js'],
+        extensions: ['.js'],
         // 不进行自动补全或处理的文件或者文件夹
-        fallback: [path.join(__dirname, '../node_modules')],
+        // fallback: [path.join(__dirname, '../node_modules')], 1.x
+        modules: [path.join(__dirname, '../node_modules')],
         // 默认路径代理
         alias: {
             'src': path.resolve(__dirname, '../src')
@@ -25,7 +26,7 @@ module.exports = {
     },
 
     module: {
-        loaders: [
+        /*loaders: [
             {
                 test: /\.js$/,
                 loaders: ['babel-loader'],
@@ -52,17 +53,53 @@ module.exports = {
                     name: 'static/fonts/[name].[hash:7].[ext]'
                 }
             }
-        ],
-        postLoaders: [
+        ], 1.x */
+        /*postLoaders: [
             {
                 test: /\.js$/,
                 loaders: ['es3ify-loader']
+            }
+        ] 1.x */
+        rules: [
+            {
+                test: /\.js$/,
+                loaders: ['babel-loader'],
+                include: projectRoot,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url',
+                query: {
+                    limit: 1000 * 10,
+                    name: 'static/img/[name].[hash:7].[ext]'
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url',
+                query: {
+                    limit: 1000 * 10,
+                    name: 'static/fonts/[name].[hash:7].[ext]'
+                }
+            },
+            {
+                test: /\.js$/,
+                enforce: 'post',
+                loaders: ['es3ify-loader'],
+                include: projectRoot,
+                exclude: /node_modules/
             }
         ]
     },
 
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
+        //new webpack.optimize.OccurenceOrderPlugin(), 1.x
+        new webpack.optimize.OccurrenceOrderPlugin(),
 
         /* definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串 */
         new webpack.DefinePlugin({

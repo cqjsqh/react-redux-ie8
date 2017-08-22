@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cqjsqh/react-redux-ie8#readme",
   "dependencies": {
+    "es5-shim": "^4.5.9",
     "eventsource-polyfill": "^0.9.6",
     "fetch-ie8": "^1.4.0",
     "object-assign": "^4.0.1",
@@ -36,16 +37,19 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "connect-history-api-fallback": "^1.3.0",
-    "cross-env": "^1.0.6",
-    "es3ify-loader": "^0.1.0",
-    "express": "^4.13.3",
+    "cross-env": "^5.0.5",
+    "es3ify-loader": "^0.2.0",
+    "express": "^4.15.4",
+    "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "ip": "^1.1.5",
     "opn": "^5.1.0",
-    "webpack": "^1.12.9",
-    "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0",
+    "ora": "^1.3.0",
+    "shelljs": "^0.7.8",
+    "webpack": "^3.5.5",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
   }
 }

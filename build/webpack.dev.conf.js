@@ -21,7 +21,8 @@ module.exports = merge(baseWebpackConfig, {
         new webpack.HotModuleReplacementPlugin(),
 
         /* 使用了 NoErrorsPlugin 后页面中的报错不会阻塞，但是会在编译结束后报错 */
-        new webpack.NoErrorsPlugin(),
+        //new webpack.NoErrorsPlugin(), 1.x
+        new webpack.NoEmitOnErrorsPlugin(),
 
         /* 将 index.html 作为入口，注入 html 代码后生成 index.html文件 */
         new HtmlWebpackPlugin({
