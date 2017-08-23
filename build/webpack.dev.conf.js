@@ -32,5 +32,5 @@ module.exports = merge(baseWebpackConfig, {
         })
     ],
 
-    devtool: '#eval-source-map'
+    devtool: 'eval-source-map'
 });

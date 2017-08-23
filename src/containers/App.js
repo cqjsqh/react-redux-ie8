@@ -4,12 +4,13 @@ import { connect } from 'react-redux'
 import Header from '../components/Header';
 import Content from '../components/Content';
 import * as Actions from '../actions';
+import Style from '../less/main.less';
 
 class App extends Component{
     render(){
         const {todos, actions} = this.props;
         return (
-            <div>
+            <div className="page-app">
                 <Header actions={actions} />
                 <Content todos={todos} actions={actions} />
             </div>

@@ -61,36 +61,51 @@ module.exports = {
             }
         ] 1.x */
         rules: [
+            /*{
+                test: /\.js$/,
+                enforce: 'pre',
+                loader: 'eslint-loader',
+                include: projectRoot,
+                exclude: /node_modules/
+            },*/
             {
                 test: /\.js$/,
-                loaders: ['babel-loader'],
+                use: ['babel-loader'],
                 include: projectRoot,
                 exclude: /node_modules/
             },
             {
+                test: /\.(css|less)$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
+            },
+            {
                 test: /\.json$/,
-                loader: 'json'
+                use: 'json-loader'
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'url',
-                query: {
-                    limit: 1000 * 10,
-                    name: 'static/img/[name].[hash:7].[ext]'
+                use: {
+                    loader: 'url-loader',
+                    query: {
+                        limit: 1000 * 10,
+                        name: 'static/img/[name].[hash:7].[ext]'
+                    }
                 }
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'url',
-                query: {
-                    limit: 1000 * 10,
-                    name: 'static/fonts/[name].[hash:7].[ext]'
+                use: {
+                    loader: 'url-loader',
+                    query: {
+                        limit: 1000 * 10,
+                        name: 'static/fonts/[name].[hash:7].[ext]'
+                    }
                 }
             },
             {
                 test: /\.js$/,
                 enforce: 'post',
-                loaders: ['es3ify-loader'],
+                use: ['es3ify-loader'],
                 include: projectRoot,
                 exclude: /node_modules/
             }
@@ -106,6 +121,15 @@ module.exports = {
             'process.env': {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
-        })
+        }),
+
+        /*new webpack.LoaderOptionsPlugin({
+            options: {
+                eslint: {
+                    // 编译后错误报告格式
+                    formatter: require('eslint-friendly-formatter')
+                }
+            }
+        })*/
     ]
 };
