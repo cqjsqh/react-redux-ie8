@@ -1,10 +1,9 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import TodoItem from '../components/TodoItem';
 
-
-export default class Content extends Component{
-    render(){
-        const {todos,actions} = this.props;
+export default class Content extends Component {
+    render() {
+        const { todos, actions } = this.props;
         return (
             <div>
                 <ul>{todos.map(todo =>

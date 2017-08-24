@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/prod.js",
-    "lint": "eslint --ext .js, src"
+    "lint": "eslint src --ext .js --format 'node_modules/eslint-friendly-formatter'"
   },
   "repository": {
     "type": "git",
@@ -44,13 +44,16 @@
     "css-loader": "^0.28.5",
     "es3ify-loader": "^0.2.0",
     "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.2.0",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.3.0",
     "eslint-plugin-standard": "^3.0.1",
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",

@@ -6,7 +6,7 @@ import Content from '../components/Content';
 import * as Actions from '../actions';
 import Style from '../less/main.less';
 
-class App extends Component{
+class App extends Component {
     render(){
         const {todos, actions} = this.props;
         return (

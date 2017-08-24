@@ -61,13 +61,13 @@ module.exports = {
             }
         ] 1.x */
         rules: [
-            /*{
+            {
                 test: /\.js$/,
                 enforce: 'pre',
                 loader: 'eslint-loader',
                 include: projectRoot,
                 exclude: /node_modules/
-            },*/
+            },
             {
                 test: /\.js$/,
                 use: ['babel-loader'],
@@ -76,7 +76,12 @@ module.exports = {
             },
             {
                 test: /\.(css|less)$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'less-loader'
+                ]
             },
             {
                 test: /\.json$/,
@@ -123,13 +128,13 @@ module.exports = {
             }
         }),
 
-        /*new webpack.LoaderOptionsPlugin({
+        new webpack.LoaderOptionsPlugin({
             options: {
                 eslint: {
                     // 编译后错误报告格式
                     formatter: require('eslint-friendly-formatter')
                 }
             }
-        })*/
+        })
     ]
 };
