@@ -32,7 +32,8 @@ module.exports = {
         'jsx-a11y/href-no-hash': 0,
         'react/prefer-stateless-function': 0,
         'no-unused-vars': 0,
-        'indent': [1, 4]
+        'indent': [1, 4],
+        'react/prop-types': 0
     },
 
     // 增加的全局变量供运行时使用

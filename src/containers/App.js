@@ -7,8 +7,8 @@ import * as Actions from '../actions';
 import Style from '../less/main.less';
 
 class App extends Component {
-    render(){
-        const {todos, actions} = this.props;
+    render() {
+        const { todos, actions } = this.props;
         return (
             <div className="page-app">
                 <Header actions={actions} />
@@ -18,14 +18,14 @@ class App extends Component {
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
-        todos : state.todos
+        todos: state.todos
     }
 }
-function mapDispatchToProps(dispatch){
-    return{
-        actions : bindActionCreators(Actions, dispatch)
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(Actions, dispatch)
     }
 }
 module.exports = connect(
